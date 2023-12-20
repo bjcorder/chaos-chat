@@ -14,7 +14,6 @@
                 username,
                 password,
                 passwordConfirm: password,
-                name: 'Hi mom!',
             };
             const createdUser = await pb.collection('users').create(data);
             await login();
@@ -31,6 +30,7 @@
 
 {#if $currentUser}
     <p> Signed in as {$currentUser.username}</p>
+    <button on:click={signOut}>Log Out</button>
 
 {:else}
     <form on:submit|preventDefault>
