@@ -1,9 +1,17 @@
 <script lang="ts">
     import Login from "./lib/Login.svelte";
+    import Messages from "./lib/Messages.svelte";
+    import { currentUser } from "./lib/pocketbase";
 
 
 </script>
 
 <h1>Chaos Chat</h1>
 
+{#if $currentUser}
+  <Messages />
+  
+{/if}
+
 <Login />
+
