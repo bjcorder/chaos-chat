@@ -45,6 +45,12 @@
 
 </script>
 
+<div class="section">
+    <h1>
+        Messages
+    </h1>
+</div>
+
 <div class="messages">
     {#each messages as message (message.id)}
         <div class="msg">
@@ -68,3 +74,16 @@
     <input placeholder="Message" type="text" bind:value={newMessage} />
     <button type="submit">Send</button>
 </form>
+
+<style>
+    div {
+        display: block;
+    }
+    .messages{
+        border: 1px solid #ddd;
+        overflow: auto;
+        max-height: 400px;
+        text-align: left;
+        padding: 10px;
+    }
+</style>
